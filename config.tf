@@ -10,6 +10,5 @@ terraform {
 }
 
 provider "aws" {
-  alias  = "dns"
-  region = "us-east-1"
+  alias = "dns"
 }
