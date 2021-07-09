@@ -26,7 +26,7 @@ module "dns" {
   stage_env_vars    = each.value.env_vars != null ? each.value.env_vars : {}
 
   providers = {
-    aws-dns = aws.dns
+    aws.dns = aws.dns
   }
 }
 ```
