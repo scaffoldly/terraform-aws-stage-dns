@@ -56,12 +56,3 @@ resource "aws_acm_certificate_validation" "validation" {
   validation_record_fqdns = values(aws_route53_record.verification_record)[*].fqdn
 }
 
-resource "aws_route53_record" "mx" {
-  zone_id = data.aws_route53_zone.zone.zone_id
-  name    = local.mail_domain
-  type    = "MX"
-  ttl     = "300"
-  records = ["10 inbound-smtp.${data.aws_region.current.name}.amazonaws.com"]
-
-  provider = aws.dns
-}
