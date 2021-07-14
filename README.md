@@ -38,20 +38,19 @@ module "dns" {
 - Remove aws_route53_delegation_set
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
-| Name                                                                     | Version   |
-| ------------------------------------------------------------------------ | --------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.15   |
-| <a name="requirement_aws"></a> [aws](#requirement_aws)                   | ~> 3.33.0 |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.33.0 |
 
 ## Providers
 
-| Name                                                         | Version |
-| ------------------------------------------------------------ | ------- |
-| <a name="provider_aws"></a> [aws](#provider_aws)             | 3.33.0  |
-| <a name="provider_aws.dns"></a> [aws.dns](#provider_aws.dns) | 3.33.0  |
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.33.0 |
+| <a name="provider_aws.dns"></a> [aws.dns](#provider\_aws.dns) | 3.33.0 |
 
 ## Modules
 
@@ -69,29 +68,28 @@ No modules.
 
 ## Inputs
 
-| Name                                                                                 | Description                                                                  | Type          | Default | Required |
-| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ------------- | ------- | :------: |
-| <a name="input_delegation_set_id"></a> [delegation_set_id](#input_delegation_set_id) | The delegation set on Route53                                                | `string`      | n/a     |   yes    |
-| <a name="input_dns_provider"></a> [dns_provider](#input_dns_provider)                | The DNS provider (Route53 currently only supported)                          | `string`      | `"aws"` |    no    |
-| <a name="input_domain"></a> [domain](#input_domain)                                  | The domain for the application                                               | `string`      | n/a     |   yes    |
-| <a name="input_stage"></a> [stage](#input_stage)                                     | The stage (e.g. live, nonlive)                                               | `string`      | n/a     |   yes    |
-| <a name="input_stage_env_vars"></a> [stage_env_vars](#input_stage_env_vars)          | A map of key/value pairs representing environment variables for the stage    | `map(string)` | `{}`    |    no    |
-| <a name="input_subdomain"></a> [subdomain](#input_subdomain)                         | The subdomain for the stage                                                  | `string`      | n/a     |   yes    |
-| <a name="input_subdomain_suffix"></a> [subdomain_suffix](#input_subdomain_suffix)    | The suffix to append to the subdomain (can be an empty string for no suffix) | `string`      | n/a     |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_delegation_set_id"></a> [delegation\_set\_id](#input\_delegation\_set\_id) | The delegation set on Route53 | `string` | n/a | yes |
+| <a name="input_dns_provider"></a> [dns\_provider](#input\_dns\_provider) | The DNS provider (Route53 currently only supported) | `string` | `"aws"` | no |
+| <a name="input_domain"></a> [domain](#input\_domain) | The domain for the application | `string` | n/a | yes |
+| <a name="input_stage"></a> [stage](#input\_stage) | The stage (e.g. live, nonlive) | `string` | n/a | yes |
+| <a name="input_stage_env_vars"></a> [stage\_env\_vars](#input\_stage\_env\_vars) | A map of key/value pairs representing environment variables for the stage | `map(string)` | `{}` | no |
+| <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain for the stage | `string` | n/a | yes |
+| <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The suffix to append to the subdomain (can be an empty string for no suffix) | `string` | n/a | yes |
 
 ## Outputs
 
-| Name                                                                                               | Description                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| <a name="output_certificate_arn"></a> [certificate_arn](#output_certificate_arn)                   | The ACM certificate for the serverless API domain  |
-| <a name="output_dns_domain_id"></a> [dns_domain_id](#output_dns_domain_id)                         | The Route53 domain ID                              |
-| <a name="output_dns_provider"></a> [dns_provider](#output_dns_provider)                            | Re-output of var.dns_provider                      |
-| <a name="output_domain"></a> [domain](#output_domain)                                              | Re-output of var.domain                            |
-| <a name="output_platform_domains"></a> [platform_domains](#output_platform_domains)                | A map of the domains managed in this stage         |
-| <a name="output_serverless_api_domain"></a> [serverless_api_domain](#output_serverless_api_domain) | The computed Serverless API Domain                 |
-| <a name="output_stage"></a> [stage](#output_stage)                                                 | Re-output of var.stage                             |
-| <a name="output_stage_env_vars"></a> [stage_env_vars](#output_stage_env_vars)                      | The resultant environment variables for this stage |
-| <a name="output_subdomain"></a> [subdomain](#output_subdomain)                                     | Re-output of var.subdomain                         |
-| <a name="output_subdomain_suffix"></a> [subdomain_suffix](#output_subdomain_suffix)                | Re-output of var.subdomain_suffix                  |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_certificate_arn"></a> [certificate\_arn](#output\_certificate\_arn) | The ACM certificate for the serverless API domain |
+| <a name="output_dns_domain_id"></a> [dns\_domain\_id](#output\_dns\_domain\_id) | The Route53 domain ID |
+| <a name="output_dns_provider"></a> [dns\_provider](#output\_dns\_provider) | Re-output of var.dns\_provider |
+| <a name="output_domain"></a> [domain](#output\_domain) | Re-output of var.domain |
+| <a name="output_platform_domains"></a> [platform\_domains](#output\_platform\_domains) | A map of the domains managed in this stage |
+| <a name="output_serverless_api_domain"></a> [serverless\_api\_domain](#output\_serverless\_api\_domain) | The computed Serverless API Domain |
+| <a name="output_stage"></a> [stage](#output\_stage) | Re-output of var.stage |
+| <a name="output_stage_env_vars"></a> [stage\_env\_vars](#output\_stage\_env\_vars) | The resultant environment variables for this stage |
+| <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Re-output of var.subdomain |
+| <a name="output_subdomain_suffix"></a> [subdomain\_suffix](#output\_subdomain\_suffix) | Re-output of var.subdomain\_suffix |
 <!-- END_TF_DOCS -->
